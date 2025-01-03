@@ -31,6 +31,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install torch==2.4.0
+          pip install flash-attn==2.6.3 --no-build-isolation
           pip install .
           pip install -r requirements-dev.txt
       
