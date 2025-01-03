@@ -141,7 +141,6 @@ poate_attack/sketch*
 # poate files
 # sensitive data
 .env
-/data
 
 # cache
 __pycache__
