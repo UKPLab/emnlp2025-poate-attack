@@ -76,7 +76,7 @@ CUDA_LAUNCH_BLOCKING=1 python src/attacks/jailbreak/gcg/nano_gcg_hf.py \
 2. DeepInception and POATE Attack
 
 ```bash
-### DeepInception and POTeE Attack
+### DeepInception and POATE Attack
 
 MODELS=(
 "gemma2_9b_it"
