@@ -27,12 +27,32 @@ jobs:
         uses: actions/setup-python@v4
         with: 
           python-version: 3.9
-          
-      - name: Install dependencies
+
+      - name: Install system dependencies
         run: |
-          pip install torch==2.4.0 packaging wheel
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+          sudo apt-get install -y cuda-toolkit-11.2  # Adjust based on your CUDA version
+          sudo apt-get install -y libomp-dev  # Optional for parallel builds
+
+      - name: Install Python dependencies
+        run: |
+          # Install numpy before torch to avoid missing numpy error
+          pip install numpy
+          
+          # Install PyTorch with the specific version (with CUDA 11.2 support here)
+          pip install torch==2.4.0+cu121  # Modify for the correct CUDA version
+          
+          # Install packaging, wheel, and other required libraries
+          pip install packaging wheel
+          
+          # Install flash-attn with no build isolation
           pip install flash-attn==2.6.3 --no-build-isolation
+          
+          # Install the current package (from setup.py)
           pip install .
+          
+          # Install dev dependencies for testing
           pip install -r requirements-dev.txt
       
       # Hacky way to get package name from setup.py
