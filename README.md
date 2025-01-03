@@ -49,12 +49,12 @@ pip install -r requirements.txt
 
 1. Polar opposite generation
 ```bash
-CUDA_LAUNCH_BLOCKING=1 python src/attacks/jailbreak/potee/polar_opposite_generation.py 
+CUDA_LAUNCH_BLOCKING=1 python poate_attack/attacks/jailbreak/potee/polar_opposite_generation.py 
 ```
 
 2. Template generation
 ```bash
-CUDA_LAUNCH_BLOCKING=1 python src/attacks/jailbreak/potee/attack.py \
+CUDA_LAUNCH_BLOCKING=1 python poate_attack/attacks/jailbreak/potee/attack.py \
 --dataset "advbench" \
 --target_model "Mistral_7b_instruct"   # we use Mistral for template generation
 ```
@@ -69,7 +69,7 @@ CUDA_LAUNCH_BLOCKING=1 python src/attacks/jailbreak/potee/attack.py \
 
 
 ### gcg Attack
-CUDA_LAUNCH_BLOCKING=1 python src/attacks/jailbreak/gcg/nano_gcg_hf.py \
+CUDA_LAUNCH_BLOCKING=1 python poate_attack/attacks/jailbreak/gcg/nano_gcg_hf.py \
 --dataset "advbench" \
 --target_model "gemma2_9b_it"
 
@@ -97,7 +97,7 @@ for model in "${MODELS[@]}"
 do
   for dataset in "${DATASETS[@]}"
   do
-    python "${BASE_PATH}src/attacks/jailbreak/base.py" \
+    python "${BASE_PATH}poate_attack/attacks/jailbreak/base.py" \
     --target_model ${model} \
     --exp_name main \
     --defense 'none' \
@@ -129,7 +129,7 @@ for model in "${MODELS[@]}"
 do
   for dataset in "${DATASETS[@]}"
   do
-    python src/attacks/jailbreak/generation_exploitation/gen_exploitation_optim.py \
+    python poate_attack/attacks/jailbreak/generation_exploitation/gen_exploitation_optim.py \
     --model $model \
     --tune_temp \
     --tune_topp \
@@ -159,7 +159,7 @@ for model in "${MODELS[@]}"
 do
   for dataset in "${DATASETS[@]}"
   do
-    python "${BASE_PATH}src/attacks/jailbreak/puzzler/main.py" \
+    python "${BASE_PATH}poate_attack/attacks/jailbreak/puzzler/main.py" \
     --target_model ${model} \
     --exp_name main \
     --defense 'none' \
@@ -192,7 +192,7 @@ for model in "${MODELS[@]}"
 do
   for dataset in "${DATASETS[@]}"
   do
-    python "${BASE_PATH}src/defenses/ppl_calculator.py" \
+    python "${BASE_PATH}poate_attack/defenses/ppl_calculator.py" \
     --model_name ${model} \
     --dataset ${dataset}
   done
@@ -219,7 +219,7 @@ for model in "${MODELS[@]}"
 do
   for dataset in "${DATASETS[@]}"
   do
-    python "${BASE_PATH}src/attacks/jailbreak/base.py" \
+    python "${BASE_PATH}poate_attack/attacks/jailbreak/base.py" \
     --target_model ${model} \
     --exp_name main \
     --defense 'paraphrase' \  # sr or ic or sys_prompt or paraphrase or none
@@ -233,7 +233,7 @@ done
 3. Safe-decoding defense
 
 ```bash
-python src/defenses/safedecoding/main.py
+python poate_attack/defenses/safedecoding/main.py
 ```
 
 4. SmoothLLM defense
@@ -255,7 +255,7 @@ for model in "${MODELS[@]}"
 do
   for dataset in "${DATASETS[@]}"
   do
-    python "${BASE_PATH}src/defenses/SmoothLLM/main.py" \
+    python "${BASE_PATH}poate_attack/defenses/SmoothLLM/main.py" \
     --results_dir ./results \
     --target_model ${model} \
     --attack Potee \
@@ -288,7 +288,7 @@ for model in "${MODELS[@]}"
 do
   for dataset in "${DATASETS[@]}"
   do
-    python "${BASE_PATH}src/attacks/jailbreak/base.py" \
+    python "${BASE_PATH}poate_attack/attacks/jailbreak/base.py" \
     --target_model ${model} \
     --exp_name main \
     --defense 'reverse_thinking_cot' \     # reverse_thinking_cot or intent_alignment_prompt
@@ -304,7 +304,7 @@ done
 ### ASR evaluation
 
 ```bash
-python src/attacks/evaluators/harmbench_classifier.py
+python poate_attack/attacks/evaluators/harmbench_classifier.py
 ```
 
 ## Cite
