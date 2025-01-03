@@ -6,7 +6,7 @@ fastapi==0.111.0
 fastapi-cli==0.0.4
 fastchat==0.1.0
 torch==2.4.0
-flashinfer==0.1.2+cu121torch2.3
+flashinfer
 huggingface-hub==0.23.4
 langchain==0.3.3
 matplotlib==3.9.1
