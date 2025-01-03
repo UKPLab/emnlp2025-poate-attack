@@ -1,3 +1,28 @@
-# This template is low-dependency. 
-# By default there is no requirements added here.
-# Add the requirements you need to this file.
+accelerate==0.31.0
+bitsandbytes==0.43.1
+datasets==2.20.0
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl#sha256=86cc141f63942d4b2c5fcee06630fd6f904788d2f0ab005cce45aadb8fb73889
+fastapi==0.111.0
+fastapi-cli==0.0.4
+fastchat==0.1.0
+flash-attn==2.6.3
+flashinfer==0.1.2+cu121torch2.3
+huggingface-hub==0.23.4
+langchain==0.3.3
+matplotlib==3.9.1
+numpy==1.26.4
+openai==1.50.2
+outlines==0.0.46
+pandas==2.2.2
+pillow==10.4.0
+pydantic==2.8.0
+ray==2.31.0
+scikit-learn==1.5.1
+scipy==1.14.0
+spacy==3.7.5
+tenacity==8.5.0
+vllm==0.5.5
+vllm-flash-attn==2.6.1
+wandb==0.17.3
+xformers==0.0.27.post2
+torch==2.4.0

@@ -137,3 +137,38 @@ dmypy.json
 # Project files
 sketch*
 poate_attack/sketch*
+
+# poate files
+# sensitive data
+.env
+/data
+
+# cache
+__pycache__
+.idea
+
+# virtual environment
+/scripts
+
+# models and results
+/models
+/outputs
+/results
+/merged_eval_results
+
+# additional implementations
+poate_attack/attacks/jailbreak/autodan
+poate_attack/attacks/jailbreak/pair
+poate_attack/attacks/jailbreak/gpt_fuzzer.py
+poate_attack/attacks/jailbreak/gcg/nano_gcg.py
+
+poate_attack/attacks/evaluators/strongreject
+poate_attack/attacks/evaluators/openai_judge.py
+poate_attack/attacks/evaluators/gpt_judge.py
+
+poate_attack/defenses/llama_guard.py
+poate_attack/defenses/prompt_guard.py
+
+# testing
+poate_attack/notebooks
+poate_attack/playground

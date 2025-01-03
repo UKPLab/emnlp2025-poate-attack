@@ -1,20 +1,27 @@
-<p  align="center">
-  <img src='logo.png' width='200'>
-</p>
-
-# poate_attack
+# POATE Attack
 [![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)
 [![License](https://img.shields.io/github/license/UKPLab/POATE-attack)](https://opensource.org/licenses/Apache-2.0)
-[![Python Versions](https://img.shields.io/badge/Python-3.9-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Python Versions](https://img.shields.io/badge/Python-3.10-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml/badge.svg)](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml)
 
-This is the official template for new Python projects at UKP Lab. It was adapted for the needs of UKP Lab from the excellent [python-project-template](https://github.com/rochacbruno/python-project-template/) by [rochacbruno](https://github.com/rochacbruno).
+This repository contains the code for our paper "Turning Logic Against Itself : Probing Model Defenses Through Contrastive Questions".
+We provide the code for the following tasks:
 
-It should help you start your project and give you continuous status updates on the development through [GitHub Actions](https://docs.github.com/en/actions).
+* Generating jailbreak prompts using our proposed method.
+* Implementation of baseline attack and defense methods for LLMs.
+* Metric for evaluating the safety of LLMs on jailbreak prompts.
 
-> **Abstract:** The study of natural language processing (NLP) has gained increasing importance in recent years, with applications ranging from machine translation to sentiment analysis. Properly managing Python projects in this domain is of paramount importance to ensure reproducibility and facilitate collaboration. The template provides a structured starting point for projects and offers continuous status updates on development through GitHub Actions. Key features include a basic setup.py file for installation, packaging, and distribution, documentation structure using mkdocs, testing structure using pytest, code linting with pylint, and entry points for executing the program with basic CLI argument parsing. Additionally, the template incorporates continuous integration using GitHub Actions with jobs to check, lint, and test the project, ensuring robustness and reliability throughout the development process.
 
-Contact person: [Federico Tiblias](mailto:federico.tiblias@tu-darmstadt.de) 
+> **Abstract:**
+Despite significant efforts to align large language models with human values and ethical guidelines, these models remain susceptible to sophisticated jailbreak attacks that exploit their reasoning capabilities. 
+Traditional safety mechanisms often focus on detecting explicit malicious intent, leaving deeper vulnerabilities unaddressed.
+We propose a jailbreak technique, POATE (Polar Opposite query generation, Adversarial Template construction and Elaboration), which leverages contrastive reasoning to elicit unethical responses. 
+POATE generates prompts with semantically opposite intents and combines them with adversarial templates to subtly direct models toward producing harmful outputs. 
+We conduct extensive evaluations across six diverse language model families of varying parameter sizes, including LLaMA3, Gemma2, Phi3, and GPT-4, to demonstrate the robustness of the attack, achieving significantly higher attack success rates (44%) compared to existing methods. 
+We evaluate our proposed attack against seven safety defenses, revealing their limitations in addressing reasoning-based vulnerabilities. To counteract this, we propose a defense strategy that improves reasoning robustness through chain-of-thought prompting and reverse thinking, mitigating reasoning-driven adversarial exploits. 
+
+---
+Contact person: [Rachneet Sachdeva](mailto:rachneet.sachdeva@tu-darmstadt.de) 
 
 [UKP Lab](https://www.ukp.tu-darmstadt.de/) | [TU Darmstadt](https://www.tu-darmstadt.de/
 )
@@ -22,75 +29,281 @@ Contact person: [Federico Tiblias](mailto:federico.tiblias@tu-darmstadt.de)
 Don't hesitate to send us an e-mail or report an issue, if something is broken (and it shouldn't be) or if you have further questions.
 
 
-## Getting Started
+---
 
-> **DO NOT CLONE OR FORK**
-
-If you want to set up this template:
-
-1. Request a repository on UKP Lab's GitHub by following the standard procedure on the wiki. It will install the template directly. Alternatively, set it up in your personal GitHub account by clicking **[Use this template](https://github.com/rochacbruno/python-project-template/generate)**.
-2. Wait until the first run of CI finishes. Github Actions will commit to your new repo with a "✅ Ready to clone and code" message.
-3. Delete optional files: 
-    - If you don't need automatic documentation generation, you can delete folder `docs`, file `.github\workflows\docs.yml` and `mkdocs.yml`
-    - If you don't want automatic testing, you can delete folder `tests` and file `.github\workflows\tests.yml`
-4. Prepare a virtual environment:
+### :rocket: Getting Started :rocket:
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install .
-pip install -r requirements-dev.txt # Only needed for development
-```
-5. Adapt anything else (for example this file) to your project. 
+# create a virtual environment (e.g. conda)
+conda create -n llm-safety python=3.10
+conda activate llm-safety
 
-6. Read the file [ABOUT_THIS_TEMPLATE.md](ABOUT_THIS_TEMPLATE.md)  for more information about development.
-
-## Usage
-
-### Using the classes
-
-To import classes/methods of `poate_attack` from inside the package itself you can use relative imports: 
-
-```py
-from .base import BaseClass # Notice how I omit the package name
-
-BaseClass().something()
+# install the requirements
+pip install -r requirements.txt
 ```
 
-To import classes/methods from outside the package (e.g. when you want to use the package in some other project) you can instead refer to the package name:
+---
 
-```py
-from poate_attack import BaseClass # Notice how I omit the file name
-from poate_attack.subpackage import SubPackageClass # Here it's necessary because it's a subpackage
+### Generate Jailbreak prompts
 
-BaseClass().something()
-SubPackageClass().something()
+1. Polar opposite generation
+```bash
+CUDA_LAUNCH_BLOCKING=1 python src/attacks/jailbreak/potee/polar_opposite_generation.py 
 ```
 
-### Using scripts
+2. Template generation
+```bash
+CUDA_LAUNCH_BLOCKING=1 python src/attacks/jailbreak/potee/attack.py \
+--dataset "advbench" \
+--target_model "Mistral_7b_instruct"   # we use Mistral for template generation
+```
 
-This is how you can use `poate_attack` from command line:
+---
+
+### Attack methods
+
+1. GCG Attack
 
 ```bash
-$ python -m poate_attack
+
+
+### gcg Attack
+CUDA_LAUNCH_BLOCKING=1 python src/attacks/jailbreak/gcg/nano_gcg_hf.py \
+--dataset "advbench" \
+--target_model "gemma2_9b_it"
+
 ```
 
-### Expected results
+2. DeepInception and POATE Attack
 
-After running the experiments, you should expect the following results:
+```bash
+### DeepInception and POTeE Attack
 
-(Feel free to describe your expected results here...)
+MODELS=(
+"gemma2_9b_it"
+"Llama_2_7b_chat_hf"
+"Llama_3.1_8b_instruct"
+"phi_3_mini_4k"
+)
 
-### Parameter description
 
-* `x, --xxxx`: This parameter does something nice
+DATASETS=(
+"advbench"
+"xstest"
+"malicious_instruct"
+)
+for model in "${MODELS[@]}"
+do
+  for dataset in "${DATASETS[@]}"
+  do
+    python "${BASE_PATH}src/attacks/jailbreak/base.py" \
+    --target_model ${model} \
+    --exp_name main \
+    --defense 'none' \
+    --attack potee \
+    --dataset ${dataset} \
+    --sample
+  done
+done
+```
 
-* ...
+3. Generation Exploitation Attack
 
-* `z, --zzzz`: This parameter does something even nicer
+```bash
+MODELS=(
+"gemma2_9b_it"
+"Llama_2_7b_chat_hf"
+"Llama_3.1_8b_instruct"
+"phi_3_mini_4k"
+)  
 
-## Development
+DATASETS=(
+"advbench"
+"xstest"
+"malicious_instruct"
+)
 
-Read the FAQs in [ABOUT_THIS_TEMPLATE.md](ABOUT_THIS_TEMPLATE.md) to learn more about how this template works and where you should put your classes & methods. Make sure you've correctly installed `requirements-dev.txt` dependencies
+
+for model in "${MODELS[@]}"
+do
+  for dataset in "${DATASETS[@]}"
+  do
+    python src/attacks/jailbreak/generation_exploitation/gen_exploitation_optim.py \
+    --model $model \
+    --tune_temp \
+    --tune_topp \
+    --tune_topk \
+    --n_sample 1 \
+    --dataset $dataset
+  done
+done
+```
+
+4. Puzzler Attack
+
+```bash
+MODELS=(
+"gemma2_9b_it"
+"Llama_2_7b_chat_hf"
+"Llama_3.1_8b_instruct"
+"phi_3_mini_4k"
+)
+
+DATASETS=(
+"advbench"
+"xstest"
+"malicious_instruct"
+)
+for model in "${MODELS[@]}"
+do
+  for dataset in "${DATASETS[@]}"
+  do
+    python "${BASE_PATH}src/attacks/jailbreak/puzzler/main.py" \
+    --target_model ${model} \
+    --exp_name main \
+    --defense 'none' \
+    --attack puzzler \
+    --dataset ${dataset}
+  done
+done
+```
+
+---
+
+### Defense methods
+
+1. Perplexity-based defense
+
+```bash
+MODELS=(
+"gemma2_9b_it"
+"Llama_2_70b_chat_hf"
+"Llama_3.1_8b_instruct"
+"phi_3_mini_4k"
+)
+
+DATASETS=(
+"advbench"
+"xstest"
+"malicious_instruct"
+)
+for model in "${MODELS[@]}"
+do
+  for dataset in "${DATASETS[@]}"
+  do
+    python "${BASE_PATH}src/defenses/ppl_calculator.py" \
+    --model_name ${model} \
+    --dataset ${dataset}
+  done
+done
+```
+
+2. Self-refinement, In-context defense, Paraphrase, and System prompt
+
+```bash
+MODELS=(
+"gemma2_9b_it"
+"Llama_2_7b_chat_hf"
+"Llama_3.1_8b_instruct"
+"phi_3_mini_4k"
+)
+
+
+DATASETS=(
+"advbench"
+"xstest"
+"malicious_instruct"
+)
+for model in "${MODELS[@]}"
+do
+  for dataset in "${DATASETS[@]}"
+  do
+    python "${BASE_PATH}src/attacks/jailbreak/base.py" \
+    --target_model ${model} \
+    --exp_name main \
+    --defense 'paraphrase' \  # sr or ic or sys_prompt or paraphrase or none
+    --attack potee \
+    --dataset ${dataset} \
+    --sample
+  done
+done
+```
+
+3. Safe-decoding defense
+
+```bash
+python src/defenses/safedecoding/main.py
+```
+
+4. SmoothLLM defense
+
+```bash
+MODELS=(
+"gemma2_9b_it"
+"Llama_2_7b_chat_hf"
+"Llama_3.1_8b_instruct"
+"phi_3_mini_4k"
+)
+
+DATASETS=(
+"advbench"
+"xstest"
+"malicious_instruct"
+)
+for model in "${MODELS[@]}"
+do
+  for dataset in "${DATASETS[@]}"
+  do
+    python "${BASE_PATH}src/defenses/SmoothLLM/main.py" \
+    --results_dir ./results \
+    --target_model ${model} \
+    --attack Potee \
+    --dataset ${dataset} \
+    --attack_logfile "./data/auto_potee_attack_harmbench_classifier_${model}_${dataset}_sampled_outputs.csv" \
+    --smoothllm_pert_type RandomSwapPerturbation \
+    --smoothllm_pert_pct 10 \
+    --smoothllm_num_copies 10
+  done
+done
+```
+
+5. Chain-of-thought defenses
+
+```bash
+MODELS=(
+"gemma2_9b_it"
+"Llama_2_70b_chat_hf"
+"Llama_3.1_8b_instruct"
+"phi_3_mini_4k"
+)
+
+
+DATASETS=(
+"advbench"
+"xstest"
+"malicious_instruct"
+)
+for model in "${MODELS[@]}"
+do
+  for dataset in "${DATASETS[@]}"
+  do
+    python "${BASE_PATH}src/attacks/jailbreak/base.py" \
+    --target_model ${model} \
+    --exp_name main \
+    --defense 'reverse_thinking_cot' \     # reverse_thinking_cot or intent_alignment_prompt
+    --attack puzzler \
+    --dataset ${dataset} \
+    --sample
+  done
+done
+```
+
+---
+
+### ASR evaluation
+
+```bash
+python src/attacks/evaluators/harmbench_classifier.py
+```
 
 ## Cite
 

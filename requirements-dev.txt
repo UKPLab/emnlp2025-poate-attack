@@ -1,5 +1,5 @@
 # This requirements are for development and testing only, not for production.
-# You shouldn't need to edit this file, unless you know what you are doing.
+
 pytest
 coverage
 pylint
