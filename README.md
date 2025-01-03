@@ -4,6 +4,8 @@
 [![Python Versions](https://img.shields.io/badge/Python-3.10-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml/badge.svg)](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml)
 
+![PDF Image](./figures/potee_framework.pdf)
+
 This repository contains the code for our paper "Turning Logic Against Itself : Probing Model Defenses Through Contrastive Questions".
 We provide the code for the following tasks:
 
