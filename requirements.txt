@@ -6,7 +6,7 @@ fastapi==0.111.0
 fastapi-cli==0.0.4
 fastchat==0.1.0
 torch==2.4.0
-flash-attn==2.6.3 --no-build-isolation
+flash-attn==2.6.3 --install-option="--no-build-isolation"
 flashinfer==0.1.2+cu121torch2.3
 huggingface-hub==0.23.4
 langchain==0.3.3

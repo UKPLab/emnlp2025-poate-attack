@@ -34,7 +34,7 @@ setup(
     url="https://github.com/UKPLab/POATE-attack/",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    author="author_name",
+    author="Rachneet Sachdeva",
     packages=find_packages(exclude=["tests", ".github"]),
     install_requires=read_requirements("requirements.txt"),
     entry_points={
