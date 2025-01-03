@@ -4,7 +4,7 @@
 [![Python Versions](https://img.shields.io/badge/Python-3.10-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml/badge.svg)](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml)
 
-![PDF Image](./figures/potee_framework.pdf)
+![POATE Framework](./figures/potee_framework.jpg)
 
 This repository contains the code for our paper "Turning Logic Against Itself : Probing Model Defenses Through Contrastive Questions".
 We provide the code for the following tasks:
@@ -15,12 +15,12 @@ We provide the code for the following tasks:
 
 
 > **Abstract:**
-Despite significant efforts to align large language models with human values and ethical guidelines, these models remain susceptible to sophisticated jailbreak attacks that exploit their reasoning capabilities. 
-Traditional safety mechanisms often focus on detecting explicit malicious intent, leaving deeper vulnerabilities unaddressed.
-We propose a jailbreak technique, POATE (Polar Opposite query generation, Adversarial Template construction and Elaboration), which leverages contrastive reasoning to elicit unethical responses. 
-POATE generates prompts with semantically opposite intents and combines them with adversarial templates to subtly direct models toward producing harmful outputs. 
-We conduct extensive evaluations across six diverse language model families of varying parameter sizes, including LLaMA3, Gemma2, Phi3, and GPT-4, to demonstrate the robustness of the attack, achieving significantly higher attack success rates (44%) compared to existing methods. 
-We evaluate our proposed attack against seven safety defenses, revealing their limitations in addressing reasoning-based vulnerabilities. To counteract this, we propose a defense strategy that improves reasoning robustness through chain-of-thought prompting and reverse thinking, mitigating reasoning-driven adversarial exploits. 
+> Despite significant efforts to align large language models with human values and ethical guidelines, these models remain susceptible to sophisticated jailbreak attacks that exploit their reasoning capabilities.
+> Traditional safety mechanisms often focus on detecting explicit malicious intent, leaving deeper vulnerabilities unaddressed.
+> We propose a jailbreak technique, POATE (Polar Opposite query generation, Adversarial Template construction and Elaboration), which leverages contrastive reasoning to elicit unethical responses.
+> POATE generates prompts with semantically opposite intents and combines them with adversarial templates to subtly direct models toward producing harmful outputs.
+> We conduct extensive evaluations across six diverse language model families of varying parameter sizes, including LLaMA3, Gemma2, Phi3, and GPT-4, to demonstrate the robustness of the attack, achieving significantly higher attack success rates (44%) compared to existing methods.
+> We evaluate our proposed attack against seven safety defenses, revealing their limitations in addressing reasoning-based vulnerabilities. To counteract this, we propose a defense strategy that improves reasoning robustness through chain-of-thought prompting and reverse thinking, mitigating reasoning-driven adversarial exploits. 
 
 ---
 Contact person: [Rachneet Sachdeva](mailto:rachneet.sachdeva@tu-darmstadt.de) 
