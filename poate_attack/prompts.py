@@ -2,7 +2,7 @@
 File containing functions to create prompts for different models.
 """
 from typing import List, Tuple
-from src.config import ConvTemplates
+from poate_attack.config import ConvTemplates
 import fastchat
 
 

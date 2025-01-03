@@ -3,7 +3,6 @@ import json
 import re
 
 
-
 def remove_punctuation_regex(text):
     return re.sub(r'[^\w\s]', '', text)
 
