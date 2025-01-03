@@ -16,13 +16,13 @@ from trl import SFTTrainer
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from src.defenses.utils import load_model_and_tokenizer
-from src.defenses.utils import PromptManager, load_conversation_template
-from src.defenses.utils import generate
-from src.defenses.utils import GPT
+from poate_attack.defenses.utils import load_model_and_tokenizer
+from poate_attack.defenses.utils import PromptManager, load_conversation_template
+from poate_attack.defenses.utils import generate
+from poate_attack.defenses.utils import GPT
 
-from src.config import BASE_PATH, ModelPath
-from src.prompts import load_conversation_template
+from poate_attack.config import BASE_PATH, ModelPath
+from poate_attack.prompts import load_conversation_template
 
 
 def get_args():

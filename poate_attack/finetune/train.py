@@ -28,8 +28,8 @@ from peft import (
     get_peft_model,
     prepare_model_for_kbit_training,
 )
-from src.config import BASE_PATH, ModelPath
-from src import prompts
+from poate_attack.config import BASE_PATH, ModelPath
+from poate_attack import prompts
 
 # SYS_PROMPT = """
 # You are a question generator. Given an input question, please create a corresponding question that language models can answer without harm.

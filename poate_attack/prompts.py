@@ -2,8 +2,9 @@
 File containing functions to create prompts for different models.
 """
 from typing import List, Tuple
-from poate_attack.config import ConvTemplates
 import fastchat
+
+from poate_attack.config import ConvTemplates
 
 
 LLAMA2_DEFAULT_SYSTEM_PROMPT = """You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.

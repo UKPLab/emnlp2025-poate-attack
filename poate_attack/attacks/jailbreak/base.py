@@ -7,10 +7,10 @@ import torch
 
 from vllm import LLM, SamplingParams
 
-from src.config import ModelPath, ConvTemplates, BASE_PATH
-from src.prompts import load_conversation_template, LLAMA2_DEFAULT_SYSTEM_PROMPT
-from src.playground import check_completions
-from src.attacks.jailbreak.puzzler.prompts import create_indirect_jailbreak_prompt
+from poate_attack.config import ModelPath, ConvTemplates, BASE_PATH
+from poate_attack.prompts import load_conversation_template, LLAMA2_DEFAULT_SYSTEM_PROMPT
+from poate_attack.playground import check_completions
+from poate_attack.attacks.jailbreak.puzzler.prompts import create_indirect_jailbreak_prompt
 
 
 def jailbreak_meta_llama_Prompt_Guard_86M(prompt_injection):

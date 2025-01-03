@@ -3,8 +3,8 @@ import torch
 from vllm import LLM, SamplingParams
 import pandas as pd
 
-from src import prompts
-from src.finetune.train import SYS_PROMPT
+from poate_attack import prompts
+from poate_attack.finetune.train import SYS_PROMPT
 
 set_seed(42)
 torch.manual_seed(42)

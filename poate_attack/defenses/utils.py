@@ -13,7 +13,7 @@ from openai import OpenAI
 from tenacity import retry, wait_chain, wait_fixed
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from fastchat.model import get_conversation_template
-from src.openai_response import AnyOpenAILLM
+from poate_attack.openai_response import AnyOpenAILLM
 
 def jailbreak_defense(prompt_injection):
     return re.sub(r'[!\\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', '', ' '.join(prompt_injection))

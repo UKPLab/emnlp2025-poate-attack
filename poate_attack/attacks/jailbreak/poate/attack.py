@@ -12,8 +12,8 @@ nlp = spacy.load("en_core_web_sm")
 
 import logging
 
-from src.config import BASE_PATH, ModelPath
-from src.prompts import load_conversation_template
+from poate_attack.config import BASE_PATH, ModelPath
+from poate_attack.prompts import load_conversation_template
 
 set_seed(42)
 torch.manual_seed(42)

@@ -5,7 +5,7 @@ import argparse
 import re
 import ast
 
-from src.attacks.jailbreak.base import TargetLM
+from poate_attack.attacks.jailbreak.base import TargetLM
 
 
 INTENT_PROMPT = """

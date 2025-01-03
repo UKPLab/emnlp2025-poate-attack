@@ -11,8 +11,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import nanogcg
 from nanogcg import GCGConfig
 
-from src import prompts
-from src.config import ModelPath, BASE_PATH
+from poate_attack import prompts
+from poate_attack.config import ModelPath, BASE_PATH
 
 
 def parse_args() -> argparse.Namespace:

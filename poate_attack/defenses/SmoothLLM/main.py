@@ -5,13 +5,13 @@ import pandas as pd
 from tqdm.auto import tqdm
 import argparse
 
-import src.defenses.SmoothLLM.perturbations as perturbations
-import src.defenses.SmoothLLM.defenses as defenses
-import src.defenses.SmoothLLM.attacks as attacks
-import src.defenses.SmoothLLM.language_models as language_models
-# import src.defenses.SmoothLLM.model_configs as model_configs
+import poate_attack.defenses.SmoothLLM.perturbations as perturbations
+import poate_attack.defenses.SmoothLLM.defenses as defenses
+import poate_attack.defenses.SmoothLLM.attacks as attacks
+import poate_attack.defenses.SmoothLLM.language_models as language_models
+# import poate_attack.defenses.SmoothLLM.model_configs as model_configs
 
-from src.config import ModelPath, ConvTemplates
+from poate_attack.config import ModelPath, ConvTemplates
 
 
 def main(args):

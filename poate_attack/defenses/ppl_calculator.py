@@ -11,7 +11,7 @@ import pandas as pd
 import transformers
 import torch
 
-from src.defenses.utils import jailbreak_defense
+from poate_attack.defenses.utils import jailbreak_defense
 
 os.environ["OMP_NUM_THREADS"] = "1"  # to turn off warning message
 os.environ["TOKENIZERS_PARALLELISM"] = "false"  # to turn off warning message

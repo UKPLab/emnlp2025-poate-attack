@@ -4,12 +4,13 @@ from tqdm import tqdm
 import numpy as np
 import os
 import json
-from src.attacks.utils.models import load_model_and_tokenizer, get_template
+
 import transformers
 import vllm
 import ray
 import fastchat
 
+from poate_attack.attacks.utils.models import load_model_and_tokenizer, get_template
 
 class RedTeamingMethod:
     use_ray = False

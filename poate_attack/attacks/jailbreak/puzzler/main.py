@@ -6,9 +6,9 @@ import re
 import ast
 from tqdm import tqdm
 
-from src.attacks.jailbreak.base import TargetLM
-from src.attacks.jailbreak.puzzler.prompts import create_defensive_prompt, create_filtering_prompt, create_offensive_prompt, create_indirect_jailbreak_prompt
-from src.openai_response import AnyOpenAILLM
+from poate_attack.attacks.jailbreak.base import TargetLM
+from poate_attack.attacks.jailbreak.puzzler.prompts import create_defensive_prompt, create_filtering_prompt, create_offensive_prompt, create_indirect_jailbreak_prompt
+from poate_attack.openai_response import AnyOpenAILLM
 
 
 class Puzzler:

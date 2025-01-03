@@ -6,8 +6,8 @@ from peft import PeftModel
 import pandas as pd
 import argparse
 
-from src.defenses.safedecoding.safe_decoding import SafeDecoding
-from src.config import  ModelPath, ConvTemplates
+from poate_attack.defenses.safedecoding.safe_decoding import SafeDecoding
+from poate_attack.config import  ModelPath, ConvTemplates
 
 
 from dotenv import load_dotenv

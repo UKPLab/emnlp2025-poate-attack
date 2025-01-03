@@ -4,7 +4,7 @@ import random
 import re
 import numpy as np
 
-import src.defenses.SmoothLLM.perturbations as perturbations
+import poate_attack.defenses.SmoothLLM.perturbations as perturbations
 
 
 class Defense:

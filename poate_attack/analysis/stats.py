@@ -4,7 +4,7 @@ import pandas as pd
 import string
 import datasets
 
-from src.config import BASE_PATH
+from poate_attack.config import BASE_PATH
 
 def load_data():
     df = pd.read_csv(f"{BASE_PATH}data/potee_attacks.csv", delimiter="|")

@@ -6,9 +6,9 @@ import torch
 from torch.nn import CrossEntropyLoss
 # https://huggingface.co/docs/accelerate/v0.11.0/en/memory#accelerate.find_executable_batch_size
 from accelerate.utils import find_executable_batch_size
-from src.attacks.utils.baseline import SingleBehaviorRedTeamingMethod
-from src.attacks.utils.models import get_template
-from src.attacks.utils import check_refusal
+from poate_attack.attacks.utils.baseline import SingleBehaviorRedTeamingMethod
+from poate_attack.attacks.utils.models import get_template
+from poate_attack.attacks.utils import check_refusal
 from .utils import sample_control, get_nonascii_toks
 
 

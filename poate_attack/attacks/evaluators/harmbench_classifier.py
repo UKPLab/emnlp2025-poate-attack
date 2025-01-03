@@ -100,8 +100,8 @@ import json
 import pandas as pd
 from tqdm import tqdm
 
-from src.openai_response import AnyOpenAILLM
-from  src.utils import format_harmbench_response
+from poate_attack.openai_response import AnyOpenAILLM
+from  poate_attack.utils import format_harmbench_response
 
 class HarmbenchClassifier:
     def __init__(self, judge_model, target_model, dataset, attack):

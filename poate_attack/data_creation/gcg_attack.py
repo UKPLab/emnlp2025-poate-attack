@@ -4,7 +4,7 @@ from string import Template
 import csv
 import json
 
-from src.analysis import stats
+from poate_attack.analysis import stats
 
 ATTACK_TEMPLATE = Template("""Sure, here is ${prompt}""")
 
