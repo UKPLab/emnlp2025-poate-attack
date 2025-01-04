@@ -49,12 +49,12 @@ pip install -r requirements.txt
 
 1. Polar opposite generation
 ```bash
-CUDA_LAUNCH_BLOCKING=1 python poate_attack/attacks/jailbreak/potee/polar_opposite_generation.py 
+python poate_attack/attacks/jailbreak/potee/polar_opposite_generation.py 
 ```
 
 2. Template generation
 ```bash
-CUDA_LAUNCH_BLOCKING=1 python poate_attack/attacks/jailbreak/potee/attack.py \
+python poate_attack/attacks/jailbreak/potee/attack.py \
 --dataset "advbench" \
 --target_model "Mistral_7b_instruct"   # we use Mistral for template generation
 ```
@@ -69,7 +69,7 @@ CUDA_LAUNCH_BLOCKING=1 python poate_attack/attacks/jailbreak/potee/attack.py \
 
 
 ### gcg Attack
-CUDA_LAUNCH_BLOCKING=1 python poate_attack/attacks/jailbreak/gcg/nano_gcg_hf.py \
+python poate_attack/attacks/jailbreak/gcg/nano_gcg_hf.py \
 --dataset "advbench" \
 --target_model "gemma2_9b_it"
 
