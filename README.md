@@ -6,7 +6,7 @@
 [![CI](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml/badge.svg)](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml)
 
 <p align="center">
-  <img src="path_to_your_image/poate_logo.png" width="200" />
+  <img src="./figures/poate_logo.png" width="200" />
 </p>
 
 This repository contains the code for our paper "Turning Logic Against Itself : Probing Model Defenses Through Contrastive Questions".
