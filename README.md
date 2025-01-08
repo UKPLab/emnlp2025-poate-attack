@@ -1,10 +1,11 @@
 # POATE Attack
+
 [![Arxiv](https://img.shields.io/badge/Arxiv-2501.01872-red?style=flat-square&logo=arxiv&logoColor=white)](https://www.arxiv.org/abs/2501.01872)
 [![License](https://img.shields.io/github/license/UKPLab/POATE-attack)](https://opensource.org/licenses/Apache-2.0)
 [![Python Versions](https://img.shields.io/badge/Python-3.10-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml/badge.svg)](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml)
 
-![POATE Framework](./figures/potee_framework.jpg)
+![POATE Logo](./figures/poate_logo.png)
 
 This repository contains the code for our paper "Turning Logic Against Itself : Probing Model Defenses Through Contrastive Questions".
 We provide the code for the following tasks:
@@ -30,6 +31,10 @@ Contact person: [Rachneet Sachdeva](mailto:rachneet.sachdeva@tu-darmstadt.de)
 
 Don't hesitate to send us an e-mail or report an issue, if something is broken (and it shouldn't be) or if you have further questions.
 
+---
+
+### Our Framework
+![POATE Framework](./figures/potee_framework.jpg)
 
 ---
 
