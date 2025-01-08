@@ -312,16 +312,14 @@ python poate_attack/attacks/evaluators/harmbench_classifier.py
 Please use the following citation:
 
 ```
-@InProceedings{smith:20xx:CONFERENCE_TITLE,
-  author    = {Smith, John},
-  title     = {My Paper Title},
-  booktitle = {Proceedings of the 20XX Conference on XXXX},
-  month     = mmm,
-  year      = {20xx},
-  address   = {Gotham City, USA},
-  publisher = {Association for XXX},
-  pages     = {XXXX--XXXX},
-  url       = {http://xxxx.xxx}
+@misc{sachdeva2025turninglogicprobing,
+      title={Turning Logic Against Itself : Probing Model Defenses Through Contrastive Questions}, 
+      author={Rachneet Sachdeva and Rima Hazra and Iryna Gurevych},
+      year={2025},
+      eprint={2501.01872},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2501.01872}, 
 }
 ```
 
