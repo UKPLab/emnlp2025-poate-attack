@@ -18,13 +18,13 @@ We provide the code for the following tasks:
 
 
 > **Abstract:**
-> Despite significant efforts to align large language models with human values and ethical guidelines, these models remain susceptible to sophisticated jailbreak attacks that exploit their reasoning capabilities.
-> Traditional safety mechanisms often focus on detecting explicit malicious intent, leaving deeper vulnerabilities unaddressed.
-> We propose a jailbreak technique, POATE (Polar Opposite query generation, Adversarial Template construction and Elaboration), which leverages contrastive reasoning to elicit unethical responses.
-> POATE generates prompts with semantically opposite intents and combines them with adversarial templates to subtly direct models toward producing harmful outputs.
-> We conduct extensive evaluations across six diverse language model families of varying parameter sizes, including LLaMA3, Gemma2, Phi3, and GPT-4, to demonstrate the robustness of the attack, achieving significantly higher attack success rates (44%) compared to existing methods.
-> We evaluate our proposed attack against seven safety defenses, revealing their limitations in addressing reasoning-based vulnerabilities. To counteract this, we propose a defense strategy that improves reasoning robustness through chain-of-thought prompting and reverse thinking, mitigating reasoning-driven adversarial exploits. 
-
+Large language models, despite extensive alignment with human values and ethical principles, remain vulnerable to sophisticated jailbreak attacks that exploit their reasoning abilities. 
+> Existing safety measures often detect overt malicious intent but fail to address subtle, reasoning-driven vulnerabilities. 
+> In this work, we introduce POATE (<ins>P</ins>olar <ins>O</ins>pposite query generation, <ins>A</ins>dversarial <ins>T</ins>emplate construction, and <ins>E</ins>laboration), a novel jailbreak technique that harnesses contrastive reasoning to provoke unethical responses. 
+> POATE crafts semantically opposing intents and integrates them with adversarial templates, steering models toward harmful outputs with remarkable subtlety. 
+> We conduct extensive evaluation across six diverse language model families of varying parameter sizes to demonstrate the robustness of the attack, achieving significantly higher attack success rates (~44%) compared to existing methods. 
+> To counter this, we propose *Intent-Aware CoT* and *Reverse Thinking CoT*, which decompose queries to detect malicious intent and reason in reverse to evaluate and reject harmful responses. 
+> These methods enhance reasoning robustness and strengthen the model’s defense against adversarial exploits.
 ---
 Contact person: [Rachneet Sachdeva](mailto:rachneet.sachdeva@tu-darmstadt.de) 
 
