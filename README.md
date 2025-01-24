@@ -6,10 +6,10 @@
 [![CI](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml/badge.svg)](https://github.com/UKPLab/POATE-attack/actions/workflows/main.yml)
 
 <p align="center">
-  <img src="./figures/poate_logo.png" width="200" />
+  <img src="../llm-safety/figures/poate_logo.png" width="200" />
 </p>
 
-This repository contains the code for our paper "Turning Logic Against Itself : Probing Model Defenses Through Contrastive Questions".
+This repository contains the code for our paper "Turning Logic Against Itself: Probing Model Defenses Through Contrastive Questions".
 We provide the code for the following tasks:
 
 * Generating jailbreak prompts using our proposed method.
