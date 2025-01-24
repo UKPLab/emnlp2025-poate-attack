@@ -56,12 +56,12 @@ pip install -r requirements.txt
 
 1. Polar opposite generation
 ```bash
-python poate_attack/attacks/jailbreak/potee/polar_opposite_generation.py 
+python poate_attack/attacks/jailbreak/poate/polar_opposite_generation.py 
 ```
 
 2. Template generation
 ```bash
-python poate_attack/attacks/jailbreak/potee/attack.py \
+python poate_attack/attacks/jailbreak/poate/attack.py \
 --dataset "advbench" \
 --target_model "Mistral_7b_instruct"   # we use Mistral for template generation
 ```
